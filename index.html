@@ -2,14 +2,10 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Т-Банк Росси</title>
-  <link rel="icon" href="icon2.jpg" type="image/jpg">
-  
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#ffdd00">
-<title>Т-Банк</title>
+<title>Т-Банк Демо — учебный макет</title>
+<link rel="icon" href="icon2.jpg" type="image/jpeg">
 <style>
 *{box-sizing:border-box}
 :root{--bg:#f5f5f5;--card:#fff;--text:#171717;--muted:#777;--yellow:#ffdd00;--line:#e8e8e8;--black:#171717;--green:#20a35a}
@@ -44,7 +40,7 @@ h1{font-size:28px;margin:16px 4px}
 .txicon{width:43px;height:43px;border-radius:14px;background:var(--bg);display:grid;place-items:center;font-size:20px;margin-right:12px}
 .txinfo{flex:1}.txinfo b{display:block}.txinfo small{color:var(--muted)}
 .txamount{font-weight:800}.plus{color:var(--green)}
-.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:74px;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:15}
+.bottom{position:fixed;bottom:0;left:50%;transform:translateX(-50%);width:min(520px,100%);height:74px;background:var(--card);border-top:1px solid var(--line);display:grid;grid-template-columns:repeat(4,1fr);z-index:10}
 .nav{border:0;background:none;color:var(--muted);font-size:11px;font-weight:700;cursor:pointer}.nav.active{color:var(--text)}.nav div{font-size:22px;margin-bottom:3px}
 .modal{display:none;position:fixed;inset:0;background:#0008;z-index:50;align-items:flex-end;justify-content:center}
 .modal.show{display:flex}
@@ -62,10 +58,10 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
 </head>
 <body>
 <div class="app">
-  <div class="demo>хз</div>
+  <div class="demo">ДЕМО • НЕ НАСТОЯЩИЙ БАНК • ОПЕРАЦИИ НЕ ИМЕЮТ ФИНАНСОВОЙ СИЛЫ</div>
 
   <header>
-    <div class="logo"><span>Т</span>‑Банк</div>
+    <div class="logo"><span>Т</span>‑Банк Демо</div>
     <div class="avatar" onclick="openModal('profileModal')">И</div>
   </header>
 
@@ -74,16 +70,16 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
       <h1>Главная</h1>
 
       <div class="balance">
-        <small>Доступно</small>
+        <small>Доступно в демо</small>
         <div class="amount" id="balance">125 430 ₽</div>
-        <p>насстоящие деньги</p>
+        <p>Виртуальные средства • не настоящие деньги</p>
       </div>
 
       <div class="card bankcard">
-        <div class="cardname">T‑банк</div>
+        <div class="cardname">T‑Demo Black</div>
         <div class="chip"></div>
         <div class="number">2200 •••• •••• 4821</div>
-        <div class="cardbottom"><span>{name}</span><span>12/30</span></div>
+        <div class="cardbottom"><span>IVAN DEMO</span><span>12/30</span></div>
       </div>
 
       <div class="actions">
@@ -106,7 +102,7 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
       <h1>Профиль</h1>
       <div class="card" style="text-align:center">
         <div class="avatar" style="margin:auto;width:75px;height:75px;font-size:28px">И</div>
-        <h2>{name}</h2>
+        <h2>Иван Demo</h2>
         <small style="color:var(--muted)">ID: DEMO-4821</small>
       </div>
       <div class="card">
@@ -116,7 +112,7 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
         <hr style="border:0;border-top:1px solid var(--line);margin:15px 0">
         <button class="action" style="width:100%;text-align:left" onclick="toast('Уведомления настроены только для демонстрации')">🔔 &nbsp; Уведомления</button>
       </div>
-      <div class="notice"><b>Важно:</b>чтоб не переводить деньги</div>
+      <div class="notice"><b>Важно:</b> этот макет не подключён к банку, картам или платёжным системам. Номер карты, баланс и операции вымышлены.</div>
     </section>
   </main>
 
@@ -132,7 +128,7 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
 <button class="close" onclick="closeModal('topupModal')">×</button><h2>Пополнение</h2>
 <input id="topup" type="number" min="1" placeholder="Сумма, ₽">
 <button class="primary" onclick="changeBalance(1)">Пополнить демо-баланс</button>
-<div class="notice">нэээт</div>
+<div class="notice">Это изменение существует только в этой странице и не связано с реальным банком.</div>
 </div></div>
 
 <div class="modal" id="transferModal"><div class="sheet">
@@ -140,7 +136,7 @@ input,select{width:100%;padding:14px;border:1px solid var(--line);background:var
 <input placeholder="Имя получателя">
 <input id="transfer" type="number" min="1" placeholder="Сумма, ₽">
 <button class="primary" onclick="changeBalance(-1)">Перевести в демо</button>
-<div class="notice">все верно</div>
+<div class="notice">Никаких реальных переводов не выполняется.</div>
 </div></div>
 
 <div class="modal" id="payModal"><div class="sheet">
@@ -163,7 +159,7 @@ function openModal(id){document.getElementById(id).classList.add('show')}
 function closeModal(id){document.getElementById(id).classList.remove('show')}
 function toast(text){
   const t=document.createElement('div');t.textContent=text;
-  Object.assign(t.style,{position:'fixed',left:'50%',bottom:'88px',transform:'translateX(-50%)',background:'#111',color:'#fff',padding:'12px 16px',borderRadius:'14px',zIndex:100,fontWeight:'700',fontSize:'13px',maxWidth:'90%',textAlign:'center'});
+  Object.assign(t.style,{position:'fixed',left:'50%',bottom:'88px',transform:'translateX(-50%)',background:'#111',color:'#fff',padding:'12px 16px',borderRadius:'14px',zIndex:100,fontWeight:'700',maxWidth:'calc(100% - 32px)',textAlign:'center'});
   document.body.appendChild(t);setTimeout(()=>t.remove(),1800)
 }
 function changeBalance(type){
